@@ -1,0 +1,29 @@
+.separator-horizontal
+{
+  height: 1px;
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: blue;
+}
+
+.separator-vertical
+{
+  height: 100%;
+  width: 1px;
+  margin-left: 25px;
+  margin-right: 25px;
+  background-color: blue; 
+}
+
+.errors-msg
+{
+  color: red;
+  font-style: italic;
+}
+
+.active-matiere
+{
+  font-style: italic;
+  font-size: 1.3em;
+}
