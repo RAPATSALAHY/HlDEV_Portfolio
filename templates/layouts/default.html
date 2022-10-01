@@ -1,18 +1,19 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="fr-fr"> 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tohy</title>
+  <title>PortFolio</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- css -->
+  {% load static %}
   <link rel="stylesheet" href="{% static 'assets/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/bower_components/font-awesome/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/dist/css/AdminLTE.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/dist/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'assets/dist/css/skins/_all-skins.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -37,5 +38,17 @@
   <script src="{% static 'assets/bower_components/jquery/dist/jquery.min.js' %}"></script>
   <script src="{% static 'assets/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
   <script src="{% static 'assets/dist/js/adminlte.min.js' %}"></script>
+  <script src="{% static 'assets/bower_components/ckeditor/ckeditor.js' %}"></script>
+  <script src="{% static 'assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js' %}"></script>
+
+<script>
+  $(function () {
+    // Replace the <textarea id="editor1"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor1')
+    //bootstrap WYSIHTML5 - text editor
+    $('.textarea').wysihtml5()
+  })
+</script>
 </body>
 </html>
