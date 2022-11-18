@@ -9,14 +9,16 @@
   {% load static %}
   <link rel="stylesheet" href="{% static 'assets/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/dist/css/AdminLTE.min.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/dist/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'assets/dist/css/skins/_all-skins.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/dist/css/styles.css' %}">
   <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
-
+  <script src="{% static 'assets/bower_components/jquery/dist/jquery.min.js' %}"></script>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
+
   <!-- nav -->
   {% include './partials/_header.html' %}
   <!-- sidebar -->
@@ -33,22 +35,16 @@
 
   <!-- footer -->
   {% include './partials/_footer.html' %}
-
   <!-- js -->
-  <script src="{% static 'assets/bower_components/jquery/dist/jquery.min.js' %}"></script>
   <script src="{% static 'assets/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'assets/dist/js/adminlte.min.js' %}"></script>
+  <script src="{% static 'assets/bower_components/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+  <script src="{% static 'assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js' %}" ></script>
   <script src="{% static 'assets/bower_components/ckeditor/ckeditor.js' %}"></script>
   <script src="{% static 'assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js' %}"></script>
-
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'assets/dist/js/adminlte.min.js' %}"></script>
 <script>
-  $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1')
-    //bootstrap WYSIHTML5 - text editor
-    $('.textarea').wysihtml5()
-  })
+  $('#datepicker').datepicker();
 </script>
 </body>
 </html>

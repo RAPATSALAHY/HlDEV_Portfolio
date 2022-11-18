@@ -1,0 +1,9 @@
+.ajuster{
+    width: 300px;
+    /*
+    La propriété overflow spécifie ce qui se passe si le contenu déborde de la boîte d'un élément.
+    Avec la valeur hidden, le débordement est tronqué et le reste du contenu est masqué
+    */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

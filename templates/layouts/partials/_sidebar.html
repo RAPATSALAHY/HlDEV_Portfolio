@@ -22,8 +22,8 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-align-justify"></i> Liste </a></li>
-            <li><a href="#"><i class="fa fa-plus-square"></i> Ajout </a></li>
+            <li><a href="{% url 'utilisateur:ListerAdministrateur' %}"><i class="fa fa-align-justify"></i> Liste </a></li>
+            <li><a href="{% url 'utilisateur:formUtilisateur' %}"><i class="fa fa-plus-square"></i> Ajout </a></li>
             </ul>
         </li>
 
@@ -35,7 +35,7 @@
             </span>
             </a>
             <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-align-justify"></i> Liste </a></li>
+            <li><a href="{% url 'introduction:ListerIntroduction' %}"><i class="fa fa-align-justify"></i> Liste </a></li>
             <li><a href="{% url 'introduction:FormIntrod' %}"><i class="fa fa-plus-square"></i> Ajout </a></li>
             </ul>
         </li>
