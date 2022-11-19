@@ -27,27 +27,9 @@ def ListerIntroduction(request):
 
 @csrf_exempt
 def ListerJsonIntroduction(request):
-        page, pagelimit, totalenregistrement = int(request.GET['page']), int(request.GET['pagelimit']), Introduction.objects.count()
-        sautpage = ((page-1) * pagelimit)
-        #Calcul le nombre totat de page
-        quotientSansReste, QuotientavecReste = (totalenregistrement // pagelimit), (totalenregistrement // pagelimit) + 1
-        NbreTotalpage = (QuotientavecReste, quotientSansReste)[totalenregistrement % pagelimit == 0]
-        #creer un dictionnaire vide
-        dictionnaire_introduction = {}
-        #creer une liste vide
-        liste_introduction = []
-        for elem in Introduction.objects.raw("select * from introduction_introduction limit %s, %s", [sautpage, pagelimit]):
-            #construire le dictionnaire
-            dictionnaire_introduction = {
-                "id": elem.id,
-                "titreintroduction": elem.titreintroduction,
-                "descriptionintroduction": elem.descriptionintroduction,
-                #convert the object to a string directly before passing it for serialization using the str() function.
-                "date": str(elem.date)
-            }
-            #Ajouter le dictionnaire dans une liste
-            liste_introduction.append(dictionnaire_introduction)
-        return JsonResponse(json.dumps([{"Data": liste_introduction}, {'TailleBdd': totalenregistrement, 'PageCourante':page,'NombreTotalPage': NbreTotalpage}]), safe=False)
+        introductions= Introduction.objects.all()
+        data = serializers.serialize('json', list(introductions),fields=('id','titreintroduction','descriptionintroduction','date'))
+        return JsonResponse(data, safe=False)
 
 @csrf_exempt
 def SupprimerIntroduction(request):
